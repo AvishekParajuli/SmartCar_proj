@@ -59,7 +59,7 @@ We're done with the basic description. Feel free to try the code *main_simple.cp
 
 ## OOAD
 The above code is not architectured well. Meaning, if i have to do a different operation, say Vehicle detection, then i cannot re-use the code *main_simple.cpp* as it is. There are certains portions such as video read, and video write which can be re-used in many other appications. However, one would most likely end up either copying the file and then trying to decipher the code flow and then plug in their algorithm. Thats a pain and it will grow bigger with the increase in complexity.
-Instead, lets look into the following diffferent files which have been well designed.
+Instead, lets look into the following diffferent files which have been well designed and architected.
 
 1. VideoController.cpp -> source code implementation details of video reading and writing operation. No need to change.
 2. VideoController.h  -> Header file to be included to use so the video read write operation for free. No need to change.
@@ -70,7 +70,7 @@ This function is the one that will get called for processing the individual fram
 The users is required to sub-class from this interface class that has pre-defined signature for the
 the Virtual function i.e. "process(cv:: Mat &input, cv:: Mat &output)".
 In this way the users can choose which algorithm they want to apply on the individual frames. They can change few parameters for the VideoController and will get the functionality for free without the need to know how it is working or changing it.
-This COntroller woule be used in future series of tutorials as well.
+This Controller would be used in future series of tutorials as well.
 Here is a snippet of main.
 ``` cpp
 VideoController vid;
@@ -88,8 +88,3 @@ VideoController vid;
 ## summary
 The resulting video is present in this repository. On my machine which is pretty average with intel corei5 and no dedicated GPU,  i did measure mean processing time of ~6ms for each image frame of the video *myOutputCarLanesVideo.avi*. For more complex algorithms, the mean processign time will definitely go higher. This is a basic algorithm and i know it will not yield good results in presence, high shadows, highly curvy roads, lane occlusions by vehicles, high dynamic range videos, and unfavourable weather conditions such as rain and snow. We will deal with them later in next series. But for now it is working great and fast on these input datasets. 
 We have completed our first operation. Voila!
-
-Good bye.
-
-
- was able to get 
