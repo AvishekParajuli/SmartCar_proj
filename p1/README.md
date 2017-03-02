@@ -10,7 +10,7 @@ I do plan to present one of the state of the art algorithms in this series where
 But for now let's get started with one of the basic algorithms. I will be using Opencv/C++ for performing these tasks.
 
 ## Acknowledgements
-  A big thanks to Udacity and the self-driving car Nano-degree(CARND) program for those advertistment that created the vibe and inspired me to publish some of my previous work and attempt the CARND projects. I am not a CARND student but i would definitely like to give credit whenever it is due. Making these projects and challenges open source have must have helped a lot of alike minds. Kudos. The video data used herein is from udacity's CARND project.
+  A big thanks to Udacity and the self-driving car Nano-degree(CARND) program for those advertistment that created the vibe and inspired me to publish some of my previous work and attempt the CARND projects. I am not a CARND student but i would definitely like to give credit wherever it is due. Making these projects and challenges open source have must have helped a lot of alike minds. Kudos. The video data used herein is from udacity's CARND project.
   
   Secondly, i would like to thank my professor, Dr. Bryan Riley, for influencing and injecting the interest of self-driving smart cars into me. 
 
