@@ -78,7 +78,8 @@ VideoController vid;
 	vid.setInputVideo(vidname);
 	vid.setOutputVideoName("myOutputCarLanesVideo.avi");
 	vid.setOutputWindowName("processed frame");
-  /* LaneFinder is a subclass of interface class which defines the process function
+        /* LaneFinder is a subclass of interface class which 
+	implements the definition of the process function*/
 	LaneFinder LD;
 	vid.setAlgorithmModel(&LD);
 	vid.run();
@@ -86,5 +87,8 @@ VideoController vid;
 ```
 
 ## summary
-The resulting video is present in this repository. On my machine which is pretty average with intel corei5 and no dedicated GPU,  i did measure mean processing time of ~6ms for each image frame of the video *myOutputCarLanesVideo.avi*. For more complex algorithms, the mean processign time will definitely go higher. This is a basic algorithm and i know it will not yield good results in presence, high shadows, highly curvy roads, lane occlusions by vehicles, high dynamic range videos, and unfavourable weather conditions such as rain and snow. We will deal with them later in next series. But for now it is working great and fast on these input datasets. 
-We have completed our first operation. Voila!
+On my machine which is pretty average with intel corei5 and no dedicated GPU,  i recorded mean processing time of ~6ms for each image frame of the video *myOutputCarLanesVideo.avi*. This is great start.
+
+For more complex algorithms, the mean processing time will definitely go higher. This is a basic algorithm and it will not yield good results in presence, high shadows, highly curvy roads, lane occlusions by vehicles, high dynamic range videos, and unfavourable weather conditions such as rain and snow. We will deal with them later in next series. 
+But for now it is working great and fast on these input datasets. 
+We now, have completed our first operation. Voila!
