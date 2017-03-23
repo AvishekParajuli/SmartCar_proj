@@ -47,9 +47,9 @@ Note: Tested on Ubuntu 16.04 and opencv 3.0.
 
 ![step 2] (SmartCar_proj/tree/HOGUI/HOGUI/step1.png)
 
-![step 3] (tree/HOGUI/HOGUI/step1.png)
+![step 3] (https://github.com/AvishekParajuli/SmartCar_proj/blob/HOGUI/HOGUI/step2.png)
 
-![step 4] (/tree/HOGUI/HOGUI/step1.png)
+![step 4] (https://raw.github.com/AvishekParajuli/SmartCar_proj/HOGUI/HOGUI/step2.png)
 
 ![step 5] (SmartCar_proj/HOGUI/step1.png)
 
