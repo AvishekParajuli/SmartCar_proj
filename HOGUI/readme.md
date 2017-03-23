@@ -37,7 +37,7 @@ Note: Tested on Ubuntu 16.04 and opencv 3.0.
 <p align="center">
   <img src="https://github.com/AvishekParajuli/SmartCar_proj/blob/HOGUI/HOGUI/step3.png" width ="450" />
 </p>
-4. change window size and repeat 1-3.
+4. change window size and repeat (1-3)
 
 5. Press ESC to quit
 
@@ -51,7 +51,9 @@ Note: Tested on Ubuntu 16.04 and opencv 3.0.
 
 ![step 4] (/tree/HOGUI/HOGUI/step1.png)
 
-![step 5] (SmartCar_proj/HOGUI/HOGUI/step1.png)
+![step 5] (SmartCar_proj/HOGUI/step1.png)
+
+![step 5] (HOGUI/step1.png)
 
 ## Contributing
 
