@@ -41,19 +41,12 @@ Note: Tested on Ubuntu 16.04 and opencv 3.0.
 
 5. Press ESC to quit
 
-![Alt text] (step1.png?raw=true " Click  to bring Control panel")
 
-![step 1] (SmartCar_proj/blob/HOGUI/HOGUI/step1.png)
+![step 2] (https://github.com/AvishekParajuli/SmartCar_proj/blob/HOGUI/HOGUI/step2.png)
 
-![step 2] (SmartCar_proj/tree/HOGUI/HOGUI/step1.png)
+![step 3] (https://raw.github.com/AvishekParajuli/SmartCar_proj/HOGUI/HOGUI/step3.png)
 
-![step 3] (https://github.com/AvishekParajuli/SmartCar_proj/blob/HOGUI/HOGUI/step2.png)
 
-![step 4] (https://raw.github.com/AvishekParajuli/SmartCar_proj/HOGUI/HOGUI/step2.png)
-
-![step 5] (SmartCar_proj/HOGUI/step1.png)
-
-![step 5] (HOGUI/step1.png)
 
 ## Contributing
 
