@@ -25,15 +25,20 @@ Note: Tested on Ubuntu 16.04 and opencv 3.0.
   
 ## UI instructions  
 
-1. select color(default RGB)
+1. Open control Panel
+<p align="center">
+  <img src="https://github.com/AvishekParajuli/SmartCar_proj/blob/HOGUI/HOGUI/step1.png" width ="450" />
+</p>
 2. Left click to select the sliding window center 
+<p align="center">
+  <img src="https://github.com/AvishekParajuli/SmartCar_proj/blob/HOGUI/HOGUI/step2.png" width ="450" />
+</p>
 3. click "showHOG" to display the HOG, 
+<p align="center">
+  <img src="https://github.com/AvishekParajuli/SmartCar_proj/blob/HOGUI/HOGUI/step3.png" width ="450" />
+</p>
 4. change window size and repeat 1-3
 5. Press ESC to quit
-
-<p align="center">
-  <img src="https://github.com/AvishekParajuli/SmartCar_proj/blob/HOGUI/HOGUI/step1.png"/>
-</p>
 
 ![Alt text] (step1.png?raw=true " Click  to bring Control panel")
 
