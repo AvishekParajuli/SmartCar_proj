@@ -31,9 +31,14 @@ Note: Tested on Ubuntu 16.04 and opencv 3.0.
 4. change window size and repeat 1-3
 5. Press ESC to quit
 
+<p align="center">
+  <!--<img src="your_relative_path_here" width="350"/> -->
+  <img src="https://github.com/AvishekParajuli/SmartCar_proj/edit/HOGUI/HOGUI/step1.png" width="350"/>
+</p>
+
 ![Alt text] (./step1.png?raw=true " Click  to bring Control panel")
 
-[[https://github.com/AvishekParajuli/SmartCar_proj/edit/HOGUI/HOGUI/step1.png|alt=step1]]
+![step 1] (https://github.com/AvishekParajuli/SmartCar_proj/edit/HOGUI/HOGUI/step1.png)
 
 ## Contributing
 
