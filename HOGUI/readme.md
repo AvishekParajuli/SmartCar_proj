@@ -43,9 +43,13 @@ Note: Tested on Ubuntu 16.04 and opencv 3.0.
 ![Alt text] (step1.png?raw=true " Click  to bring Control panel")
 
 ![step 1] (SmartCar_proj/blob/HOGUI/HOGUI/step1.png)
+
 ![step 2] (SmartCar_proj/tree/HOGUI/HOGUI/step1.png)
+
 ![step 3] (tree/HOGUI/HOGUI/step1.png)
+
 ![step 4] (/tree/HOGUI/HOGUI/step1.png)
+
 ![step 5] (HOGUI/HOGUI/step1.png)
 
 ## Contributing
