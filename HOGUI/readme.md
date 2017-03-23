@@ -32,13 +32,13 @@ Note: Tested on Ubuntu 16.04 and opencv 3.0.
 5. Press ESC to quit
 
 <p align="center">
-  <!--<img src="your_relative_path_here" width="350"/> -->
-  <img src="https://github.com/AvishekParajuli/SmartCar_proj/HOGUI/step1.png" width="350"/>
+  <img src="SmartCar_proj/tree/HOGUI/HOGUI/step1.png" width="350"/>
+  <img src="https://github.com/AvishekParajuli/SmartCar_proj/HOGUI/HOGUI/step1.png" width="350"/>
 </p>
 
-![Alt text] (/step1.png?raw=true " Click  to bring Control panel")
+![Alt text] (SmartCar_proj/HOGUI/HOGUI/step1.png?raw=true " Click  to bring Control panel")
 
-![step 1] (SmartCar_proj/HOGUI/HOGUI/step1.png)
+![step 1] (SmartCar_proj/tree/HOGUI/HOGUI/step1.png)
 
 ## Contributing
 
