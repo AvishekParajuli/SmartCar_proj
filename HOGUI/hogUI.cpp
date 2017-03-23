@@ -4,12 +4,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
-//#include <fstream>
-#include <ctime>
 
 #define WINDOW_NAME "WINDOW"
-
-#define	IMAGE_SIZE Size(40,40)
 
 #define ImageWindowName "image"
 #define HOGWindowName "HOG"
@@ -28,9 +24,9 @@ Mat ROI,IMG,IMOUT;
 
 bool RESET = true;
 int SLIDINGWINDOWSIZE= 40;
-char MSG[50];
+char MSG[100];
 //string Instruction(" 1) Select color, 2) Left click on the image, 3) Press 'showHOG' \n 4) Repeat(1-3) OR press ESC to quit");
-string Instruction(" select color, left click, showHOG");
+string Instruction(" \n1)select color, 2)left click, 3)showHOG, 4) Press ESC to quit");
 
 Mat get_hogdescriptor_visu(const Mat& color_origImg, vector<float>& descriptorValues, const Size & size);
 
@@ -52,9 +48,32 @@ void radioCallBack1(int, void *)// gray
 {
 //Mat bgr[3];   //destination array
 //split(IMG,bgr);//split source
-sprintf(MSG, "winsize= %d,  ImageType = GRAY;\n %s ", SLIDINGWINDOWSIZE,Instruction.c_str());
+sprintf(MSG, "winsize= %d,  ImageType = GRAY; %s ", SLIDINGWINDOWSIZE,Instruction.c_str());
 displayOverlay(ImageWindowName, MSG);
 cvtColor(IMG, IMOUT, COLOR_BGR2GRAY);
+imshow(ImageWindowName, IMOUT); // Shows original image
+return;
+}
+
+void radioCallBackRGB(int, void *)// rgb
+{
+//Mat bgr[3];   //destination array
+//split(IMG,bgr);//split source
+sprintf(MSG, "winsize= %d,  ImageType = RGB; %s ", SLIDINGWINDOWSIZE,Instruction.c_str());
+displayOverlay(ImageWindowName, MSG);
+IMOUT = IMG.clone();
+//cvtColor(IMG, IMOUT, COLOR_BGR2GRAY);
+imshow(ImageWindowName, IMOUT); // Shows original image
+return;
+}
+void radioCallBackCanny(int, void *)// canny
+{
+Mat temp;
+sprintf(MSG, "winsize= %d,  ImageType = canny; %s ", SLIDINGWINDOWSIZE,Instruction.c_str());
+displayOverlay(ImageWindowName, MSG);
+cvtColor(IMG, temp, COLOR_BGR2GRAY);
+Canny(temp,temp,100,300,3);
+IMOUT = temp;
 imshow(ImageWindowName, IMOUT); // Shows original image
 return;
 }
@@ -64,7 +83,7 @@ void radioCallBack2(int, void *)
 Mat bgr[3];   //destination array
 split(IMG,bgr);//split source
 IMOUT = bgr[2];//R
-sprintf(MSG, "winsize= %d,  ImageType = R;\n %s",SLIDINGWINDOWSIZE,Instruction.c_str());
+sprintf(MSG, "winsize= %d,  ImageType = R; %s",SLIDINGWINDOWSIZE,Instruction.c_str());
 displayOverlay(ImageWindowName, MSG);
 imshow(ImageWindowName, IMOUT); // Shows original image
 return;
@@ -75,7 +94,7 @@ void radioCallBack3(int, void *)
 Mat bgr[3];   //destination array
 split(IMG,bgr);//split source
 IMOUT = bgr[1];//G
-sprintf(MSG, "winsize= %d,  ImageType = G;\n %s",SLIDINGWINDOWSIZE,Instruction.c_str());
+sprintf(MSG, "winsize= %d,  ImageType = G; %s",SLIDINGWINDOWSIZE,Instruction.c_str());
 displayOverlay(ImageWindowName, MSG);
 imshow(ImageWindowName, IMOUT); // Shows original image
 return;
@@ -86,7 +105,7 @@ void radioCallBack4(int, void *)
 Mat bgr[3];   //destination array
 split(IMG,bgr);//split source
 IMOUT = bgr[0];//B
-sprintf(MSG, "winsize= %d,  ImageType = B;\n %s",SLIDINGWINDOWSIZE,Instruction.c_str());
+sprintf(MSG, "winsize= %d,  ImageType = B; %s",SLIDINGWINDOWSIZE,Instruction.c_str());
 displayOverlay(ImageWindowName, MSG);
 imshow(ImageWindowName, IMOUT); // Shows original image
 return;
@@ -95,7 +114,7 @@ void radioCallBackHSV(int, void *)
 {Mat temp;
 cvtColor(IMG, temp,COLOR_BGR2HSV);
 IMOUT = temp;//HSV
-sprintf(MSG, "winsize= %d,  ImageType = HSV;\n %s",SLIDINGWINDOWSIZE,Instruction.c_str());
+sprintf(MSG, "winsize= %d,  ImageType = HSV %s",SLIDINGWINDOWSIZE,Instruction.c_str());
 displayOverlay(ImageWindowName, MSG);
 imshow(ImageWindowName, IMOUT); // Shows original image
 return;
@@ -104,7 +123,7 @@ void radioCallBackLUV(int, void *)
 {Mat temp;
 cvtColor(IMG, temp,COLOR_BGR2Luv);
 IMOUT = temp;//HSV
-sprintf(MSG, "winsize= %d,  ImageType = LUV;\n %s",SLIDINGWINDOWSIZE,Instruction.c_str());
+sprintf(MSG, "winsize= %d,  ImageType = LUV; %s",SLIDINGWINDOWSIZE,Instruction.c_str());
 displayOverlay(ImageWindowName, MSG);
 imshow(ImageWindowName, IMOUT); // Shows original image
 return;
@@ -116,7 +135,7 @@ cvtColor(IMG, temp,COLOR_BGR2HSV);
 Mat bgr[3];   //destination array
 split(temp,bgr);//split source
 IMOUT = bgr[0];//H_HSV
-sprintf(MSG, "winsize= %d,  ImageType = H(HSV) ;\n %s",SLIDINGWINDOWSIZE,Instruction.c_str());
+sprintf(MSG, "winsize= %d,  ImageType = H(HSV) ; %s",SLIDINGWINDOWSIZE,Instruction.c_str());
 displayOverlay(ImageWindowName, MSG);
 imshow(ImageWindowName, IMOUT); // Shows original image
 return;
@@ -128,7 +147,7 @@ cvtColor(IMG, temp,COLOR_BGR2HSV);
 Mat bgr[3];   //destination array
 split(temp,bgr);//split source
 IMOUT = bgr[1];//S_HSV
-sprintf(MSG, "winsize= %d,  ImageType = S(HSV) ;\n %s",SLIDINGWINDOWSIZE,Instruction.c_str());
+sprintf(MSG, "winsize= %d,  ImageType = S(HSV) ; %s",SLIDINGWINDOWSIZE,Instruction.c_str());
 displayOverlay(ImageWindowName, MSG);
 imshow(ImageWindowName, IMOUT); // Shows original image
 return;
@@ -140,7 +159,7 @@ cvtColor(IMG, temp,COLOR_BGR2HSV);
 Mat bgr[3];   //destination array
 split(temp,bgr);//split source
 IMOUT = bgr[2];//S_HSV
-sprintf(MSG, "winsize= %d,  ImageType = V(HSV);\n %s",SLIDINGWINDOWSIZE,Instruction.c_str());
+sprintf(MSG, "winsize= %d,  ImageType = V(HSV); %s",SLIDINGWINDOWSIZE,Instruction.c_str());
 displayOverlay(ImageWindowName, MSG);
 imshow(ImageWindowName, IMOUT); // Shows original image
 return;
@@ -152,7 +171,7 @@ cvtColor(IMG, temp,COLOR_BGR2Luv);
 Mat bgr[3];   //destination array
 split(temp,bgr);//split source
 IMOUT = bgr[0];//L_Luv
-sprintf(MSG, "winsize= %d,  ImageType = L(Luv);\n %s",SLIDINGWINDOWSIZE,Instruction.c_str());
+sprintf(MSG, "winsize= %d,  ImageType = L(Luv); %s",SLIDINGWINDOWSIZE,Instruction.c_str());
 displayOverlay(ImageWindowName, MSG);
 imshow(ImageWindowName, IMOUT); // Shows original image
 return;
@@ -164,7 +183,7 @@ cvtColor(IMG, temp,COLOR_BGR2Luv);
 Mat bgr[3];   //destination array
 split(temp,bgr);//split source
 IMOUT = bgr[1];//u_Luv
-sprintf(MSG, "winsize= %d,  ImageType = u(Luv);\n %s",SLIDINGWINDOWSIZE,Instruction.c_str());
+sprintf(MSG, "winsize= %d,  ImageType = u(Luv); %s",SLIDINGWINDOWSIZE,Instruction.c_str());
 imshow(ImageWindowName, IMOUT); // Shows original image
 return;
 }
@@ -175,7 +194,7 @@ cvtColor(IMG, temp,COLOR_BGR2Luv);
 Mat bgr[3];   //destination array
 split(temp,bgr);//split source
 IMOUT = bgr[2];//v_Luv
-sprintf(MSG, "winsize= %d,  ImageType = v(Luv);\n %s",SLIDINGWINDOWSIZE,Instruction.c_str());
+sprintf(MSG, "winsize= %d,  ImageType = v(Luv); %s",SLIDINGWINDOWSIZE,Instruction.c_str());
 displayOverlay(ImageWindowName, MSG);
 imshow(ImageWindowName, IMOUT); // Shows original image
 return;
@@ -201,24 +220,29 @@ int main(int argc, char** argv)
 	mdata.im = im_temp;
 	setMouseCallback(ImageWindowName, mouseHandler, &mdata );
     //only one radiobox button can be selected for a given window/program
+    createButton("RGB",radioCallBackRGB,NULL,CV_RADIOBOX);
     createButton("GRAY",radioCallBack1,NULL,CV_RADIOBOX);
     createButton("R",radioCallBack2,NULL,CV_RADIOBOX);
     createButton("G",radioCallBack3,NULL,CV_RADIOBOX);
     createButton("B",radioCallBack4,NULL,CV_RADIOBOX);
+    createButton("Canny",radioCallBackCanny,NULL,CV_RADIOBOX);
     //creating trackbar on window name NULL will put it into control panel
     //create trackbar for sliding windowsize
-    int ntimes=5;
-    createTrackbar("winsize(40+8*Times)", NULL, &ntimes, 10, winsizeCallbackFcn1);
+    int ntimes=0;
+    createTrackbar("winsizeXTimes)", NULL, &ntimes, 10, winsizeCallbackFcn1);
     createButton(ShowHOGButton, showHOG,NULL, CV_PUSH_BUTTON,1);
     createButton("HSV",radioCallBackHSV,NULL,CV_RADIOBOX);
     createButton("H_HSV",radioCallBack5,NULL,CV_RADIOBOX);
     createButton("S_HSV",radioCallBack6,NULL,CV_RADIOBOX);
     createButton("V_HSV",radioCallBack7,NULL,CV_RADIOBOX);
+
     createButton("LUV",radioCallBackLUV,NULL,CV_RADIOBOX);
     createButton("L_LUV",radioCallBack8,NULL,CV_RADIOBOX);
     createButton("U_LUV",radioCallBack9,NULL,CV_RADIOBOX);
     createButton("V_LUV",radioCallBack10,NULL,CV_RADIOBOX);
 
+    sprintf(MSG, "winsize= %d,  ImageType = RGB(Default); %s",SLIDINGWINDOWSIZE,Instruction.c_str());
+    displayOverlay(ImageWindowName, MSG);
 
     imshow(ImageWindowName,im);
     while(1)
@@ -239,7 +263,8 @@ void dispHOG(Mat &img)
     //cvtColor(img, gray, COLOR_BGR2GRAY);
 	hog.compute(IMOUT, descriptors,Size(8, 8), Size(0, 0));
 	printHOGParams(hog);
-    imshow(HOGWindowName, get_hogdescriptor_visu(img.clone(), descriptors, hog.winSize));
+	imshow(HOGWindowName, get_hogdescriptor_visu(img.clone(), descriptors, hog.winSize));
+
 	waitKey(10);
 }
 
@@ -435,7 +460,7 @@ Mat get_hogdescriptor_visu(const Mat& color_origImg, vector<float>& descriptorVa
 				float y2 = my + dirVecY * currentGradStrength * maxVecLen * scale;
 
 				// draw gradient visualization
-				line(visu, Point((int)(x1*zoomFac), (int)(y1*zoomFac)), Point((int)(x2*zoomFac), (int)(y2*zoomFac)), Scalar(0, 255, 0), 1);
+				line(visu, Point((int)(x1*zoomFac), (int)(y1*zoomFac)), Point((int)(x2*zoomFac), (int)(y2*zoomFac)), Scalar(0,255,0), 1);
 
 			} // for (all bins)
 
