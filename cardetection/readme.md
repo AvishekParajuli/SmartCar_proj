@@ -5,7 +5,7 @@ Herein, we discuss the pipeline for detecting cars using HOG(Histogram of Orient
 
 Supplemental tool: [Interactive Visualization of HOG descriptor] (https://github.com/AvishekParajuli/SmartCar_proj/blob/master/HOGUI/readme.md)
 
-Supplemental tool: [Interactive Visualization of HOG descriptor] (/SmartCar_proj/blob/master/HOGUI/readme.md)
+Supplemental tool: [Interactive Visualization of HOG descriptor](SmartCar_proj/blob/master/HOGUI/readme.md)
 <p align="center">
   <img src="https://github.com/AvishekParajuli/SmartCar_proj/blob/feature-cardetection/cardetection/cars1.png" width ="450" />
 </p>
