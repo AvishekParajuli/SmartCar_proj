@@ -4,8 +4,6 @@
 Herein, we discuss the pipeline for detecting cars using HOG(Histogram of Oriented Gradients) in a video.
 
 Supplemental tool: [Interactive Visualization of HOG descriptor](https://github.com/AvishekParajuli/SmartCar_proj/blob/master/HOGUI/readme.md)
-
-Supplemental tool: [Interactive Visualization of HOG descriptor](../HOGUI/readme.md)
 <p align="center">
   <img src="https://github.com/AvishekParajuli/SmartCar_proj/blob/feature-cardetection/cardetection/cars1.png" width ="450" />
 </p>
@@ -19,7 +17,6 @@ Algorithm pipeline(Training svm ):
 1. Compute the HOG features for the training image set containg vehicles and non-vehicles.
 1. Train a svm using these HOG features. 
 2. Test the trained SVM on the separate test imageset and evaluate.
-3. C
 
 Note: Tested on Ubuntu 16.04 and opencv 3.0. 
 
