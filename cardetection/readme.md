@@ -16,7 +16,7 @@ Here are the steps invlolved for the training and detection part:
 Algorithm pipeline(Training svm ):
 1. From the image dataset, randomly separate it into training and test set(80%, 20% split)
 1. Choose the hog windowSize(64x64) and Compute the HOG features for the training image set containg vehicles and non-vehicles.
-1. Train a svm using these HOG features. 
+1. Train a svm using these HOG features. (Used linear SVM)
 2. Test the trained SVM on the separate test imageset and evaluate.
 3. For the real world test image, run a sliding window and use the svm from above to predict vehicle/non-vehicle.
 
@@ -27,6 +27,8 @@ Algorithm pipeline(Detectting car in video ):
 4. Choose a sliding window size, and resize to the trained size; Use SVM to predict
 5. Filter the detect points for false positive(use template matching only for the subsection of detected)
 
+##Conclusion
+This is a simple car detector and it is not very robust as seen from the video. However, it works at realtime for about 20ms average image processing time on Intel core-I5 CPU. Possible improvements include using RBF kernel for SVM, tracking detection between video frames, and possibly even using deep learning networks.
 
 ## Usage
 ### 1: train
